@@ -27,7 +27,7 @@ extern template class Solid::HyperElasticity<3>;
 extern template class FSI<2>;
 extern template class FSI<3>;
 
-const double L = 4, H = 1, a = 0.1125, b = 0.4, h = 0.05, U = 1.5;
+const double L = 4, H = 1, a = 0.1, b = 0.4, h = 0.05, U = 1.5;
 
 template <int dim>
 class BoundaryValues : public Function<dim>
@@ -45,7 +45,8 @@ double BoundaryValues<dim>::value(const Point<dim> &p,
 {
   if (component == 0 && std::abs(p[0]) < 1e-10)
     {
-      return U - 4 * U / (H * H) * (p[1] - H / 2) * (p[1] - H / 2);
+      return U;
+      //return U - 4 * U / (H * H) * (p[1] - H / 2) * (p[1] - H / 2);
     }
   return 0;
 }

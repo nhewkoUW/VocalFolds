@@ -62,9 +62,9 @@ class Sim{
 };
 
 namespace {
-const std::string simMeshSolid[] = {""};
+const std::string simMeshSolid[] = {"FSIChannelSolid_3D"};
 //Ability to set multiple fluid meshes to simplify fluid mesh refinement studies
-const std::string simMeshFluid[] = {""};
+const std::string simMeshFluid[] = {"FSIChannelFluid_3D"};
 const std::string meshPath = "meshes/";
 const std::string paramsPath = "parameters.prm";
 GridOut gridOut;
